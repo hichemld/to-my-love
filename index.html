@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>إلى رفيقة الدرب</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  direction: rtl;
+}
+
+/* شاشة الدخول */
+#login {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+#login h2 {
+  color: #ff4da6;
+  font-size: 18px;
+  line-height: 2;
+}
+
+#login button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff4da6;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* الخلفية */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg span {
+  position: absolute;
+  color: rgba(255,255,255,0.05);
+  font-size: 30px;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100vh); }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 8%;
+  padding: 20px;
+  display: none;
+}
+
+h1 {
+  color: #ff4da6;
+  font-size: 26px;
+}
+
+#text {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 2.2;
+  white-space: pre-wrap;
+}
+
+button.musicBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff4da6;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- شاشة الدخول -->
+<div id="login">
+  <h2>
+    من هشام لوداحي<br>
+    إلى ريان عطالله<br>
+    رفيقة الدرب ❤️
+  </h2>
+  <button onclick="enter()">فتح</button>
+</div>
+
+<div class="bg" id="bg"></div>
+
+<div class="content" id="content">
+  <h1>إلى رفيقة الدرب 🧡</h1>
+  <div id="text"></div>
+  <button class="musicBtn" onclick="playMusic()">تشغيل الموسيقى 🎵</button>
+</div>
+
+<!-- موسيقى (مصححة وتشتغل أفضل) -->
+<iframe id="music" width="0" height="0"
+src="https://www.youtube.com/embed/0yW7w8F2TVA?autoplay=0"
+allow="autoplay">
+</iframe>
+
+<script>
+
+// فتح الصفحة
+function enter(){
+  document.getElementById("login").style.display = "none";
+  document.getElementById("content").style.display = "block";
+  typeWriter();
+}
+
+// خلفية H∞R
+const bg = document.getElementById("bg");
+for(let i=0;i<25;i++){
+  let s = document.createElement("span");
+  s.innerText = "H∞R";
+  s.style.left = Math.random()*100 + "vw";
+  s.style.top = Math.random()*100 + "vh";
+  s.style.animationDuration = (5+Math.random()*10) + "s";
+  bg.appendChild(s);
+}
+
+// الرسالة (كما هي 100% بدون تغيير)
+const message = `ريييونتييي شوفي حتقراي هاذ رسالة صغيرة خليها دايما في عقلك خدمتها وحدي تقولي دارها من ولا من لعزيييييييييييييززز تعلمت عفسة جديد احمم خلاص خليني نبدا نحكي متدصرينيش 
+
+أولا قبل كلش بصحتك البيامم كان علابالي بلي جيبيه وعفسة ما توقفلك عند حدك نتي عفسة لي ديريها في راسك تجيبيها تعجبينيي و ملول كنت داير فيك كونفيونص بلي تجيبيه ومام اذا مجبتيهش نقعد معاك حتا وين تجيبيه بايينة هادي وراكي جزتي المرحلو المتوسط في حياتك بقالك ثانوية و تولي ل لافاك وتتخرجيي خلاص ياحيييي وش قعلد تولي مراة كبيرة أي تاع زواج امبعد نولي نقول اييي هاذي هي ريان لي كنت نعرفها راهي كبرت ايييه اييييه أصلا مبقالكش والله يامات وتجوز كيما يقولو لكبار غمضي عينك وافتحيها يجوزو ليام 
+
+ثانيا مننساوش انك جزتي كامل لهموم ومشاكل في حياتك وماعندي ما نقولك من غير يعطيك الصحة على كل جهد صغير درتيه فري نتي انسانة كوراج تفيقي وحدك تفهمي وحدك واحد ما عاونك وتقولي واحد ما شافني وش درت انا شفت كل خطوة صغيرة درتيها يعطيك الصحة على كلششش و نحبككك و باذن الله ما تزيد تجينا حتا عفسة وما تتقلقيش ربي معانا و سامع بينا برك يمهل ولا يهمل متخافش يجيك العوض ان شاء الله و يماك مديريهاش في بالك خلاص كبرتي وش تسمعي ايه ايه علابالي تعييك وتستفزك بصح معليششش خليك منها قاع علابالنا بلي يماك مهبولة ومريضة وتحب روحها و ماشي عايشة كامل دور الام مديريش عليها باسكو كون ديري عليها متعيشيش الاز والله عندك دك قرايتك دينك و مستقبلك وخلاصصص متخمممي في حتا عفسة وخدوخرا باسكو حابة تنجحي لازم تكوني وحدك فهمتي ريونتيي 
+
+ثالثا متنسايش روحكك درتي انجاز فري عظيم واي عفسة جازت خليها مع لبيام باسكو حتديري خطوة جديدة عقلية جديدة تشوفي كلش جديد كيما يقولو باصي باصي ولحياة ما قبل لبيام ديباصيي ملخررررر اععععععع علاجال هاذي نحبكك طفلة رزينة عاقلة نقية ظريفة متدينة قارية صابرة والله غير نتي افضل عبد في العالمم نقولكك يعطيككك الصححة كي وقفتي معايا و كي درتي معايا أي عفسة خلاتني فرحان و كان مادابيا نفرحك في كلششش و جامي ما نخليك وحدك باذم الله نعلمك كلشش مادامك معايا عفسة ما تخصك ما تقيسك و صحاباتك خليهم يقولو وش يقولو باسكو لي ميلحقش نيفوك يولي يضحك عليك ويعايرك ويديرلك كلش باش يهبطلك قيمتك وحنا لي ينبح منسمعولوش يااككك دلوعتي وحدة ما تديري عليها قالت فيك وفيك وفيك قوليلها صحيتي وعندك الحق واجبدي روحك خاصة اذا رحلتي خلاص راكي عرفتي عيباد كيفاه عاملين متخليهمش يلحقولك ولا يتقربو منك لذيك درجة 
+
+رابعا سمحيلي على أي غلطة غلطتها معاك وزعفتك فيها بزاف و لا كشما درت انا كيما نتي والله مرات ندير حركات منعرفش كيفاه حتكون ردة فعلك فييهم ونكون داير في بالي نورمال جتا وين تزعفي باش نفهم باش نتعلم يعني كيما انا كيما نتي مازالني نتعلم وباذن الله نوعدك نروح دايما للاحسن ونتسقم علاجالك باش نديرلك لي يحبها قلبك وسمحيلي على زعفات لكبار لي كنت دايرهم يحاه نتفكر كنت كلب والله عندك الحق تسبيني دك 
+
+مع لخر ماعندي ما نقولك من غير اتهلاي في روحك وبالاكي على روحك و حافظي على روحك عندي عينيا وحدةة ووو i lovee youuuu 
+Byeeeee`;
+
+let i = 0;
+
+function typeWriter(){
+  if(i < message.length){
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 25);
+  }
+}
+
+// تشغيل الموسيقى (تشغيل فعلي عند الضغط)
+function playMusic(){
+  let frame = document.getElementById("music");
+  frame.src = "https://www.youtube.com/embed/0yW7w8F2TVA?autoplay=1";
+}
+
+</script>
+
+</body>
+</html>
